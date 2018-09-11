@@ -1,0 +1,12 @@
+version: '2'
+services:
+    vuejs-dev:
+        container_name: vuejs-dev
+        image: centos-vuejs-dev-env:latest
+        build: ./
+        volumes:
+            - ./data:/home/node
+        ports: 
+            - "8080:8080"
+        working_dir: /home/node/
+        # command: "npm run dev"
