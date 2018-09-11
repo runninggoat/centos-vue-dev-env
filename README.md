@@ -28,6 +28,8 @@ docker exec -it vuejs-dev bash
 vue create <project name>
 ```
 
+When creating project, I suggest don't use "default" (this won't create config directory for you), use "manual mode" instead.
+
 ## Run project
 
 ```shell
