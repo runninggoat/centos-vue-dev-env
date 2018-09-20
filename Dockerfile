@@ -16,11 +16,20 @@ ENV USER node
 WORKDIR ${HOME}
 COPY config ${HOME}
 
+# set domestic npm package management source
+RUN npm config set registry https://registry.npm.taobao.org
+
 # install vuejs basic plugins and tools
-RUN npm install -g --silent vue &&\
-    npm install -g --silent @vue/cli &&\
-    npm install -g --silent vuex &&\
-    npm install -g --silent vue-router &&\
+RUN npm install -g vue &&\
+    npm install -g @vue/cli &&\
+    npm install -g vuex &&\
+    npm install -g vue-router &&\
     npm install
+
+# update nodejs install cnpm for domestic package manager
+RUN npm install -g n &&\
+    n stable &&\
+    node version &&\
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 CMD ["/usr/sbin/init"]
