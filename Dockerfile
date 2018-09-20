@@ -29,7 +29,7 @@ RUN npm install -g vue &&\
 # update nodejs install cnpm for domestic package manager
 RUN npm install -g n &&\
     n stable &&\
-    node version &&\
+    # node version &&\
     npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 CMD ["/usr/sbin/init"]
